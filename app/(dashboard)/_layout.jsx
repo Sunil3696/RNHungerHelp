@@ -5,7 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 import profile from "./profile"; 
 import HomeStack from "./HomeStack";
 import Donate from './Donate';
-
+import RequestsDonated from './RequestsDonated'; 
 const Tab = createBottomTabNavigator();
 
 const DashLayout = () => {
@@ -21,18 +21,22 @@ const DashLayout = () => {
                 iconName = focused ? "person" : "person-outline";
               }  else if (route.name === "Donate") {
                 iconName = focused ? "heart" : "heart-outline";
+              } else if (route.name === 'Requests') {
+                iconName = focused ? 'list' : 'list-outline';
               }
     
               return <Ionicons name={iconName} size={size} color={color} />;
             },
-            tabBarActiveTintColor: "tomato",
+            tabBarActiveTintColor: "#333",
             tabBarInactiveTintColor: "gray",
           })}
         >
           <Tab.Screen name="Home" component={HomeStack} options={{ headerShown: false }} />
          
           <Tab.Screen name="Donate" component={Donate} options={{ headerShown: false }} />
+          <Tab.Screen name="Requests" component={RequestsDonated} options={{ headerShown: false }} />
           <Tab.Screen name="profile" component={profile} options={{ headerShown: false }} />
+       
         </Tab.Navigator>
       );
     };

@@ -4,6 +4,7 @@
     "slug": "RNHungerHelp",
     "version": "1.0.0",
     "orientation": "portrait",
+    // we have replaced default icon with new  icon image
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {

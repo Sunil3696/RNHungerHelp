@@ -29,7 +29,7 @@ const handleSigninClicked = () => {
 
 const handleSignUp = () => {
         if(!email || !password){
-            alert("Both field are required")
+            alert("Both fields are required")
             return
         }
         if (!emailRegex.test(email)) {

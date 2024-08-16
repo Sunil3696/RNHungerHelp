@@ -11,7 +11,7 @@ const Profile = () => {
   const address = '123 Main St, City, Country';
 
   const handleEditProfile = () => {
-    Alert.alert('Edit Profile', 'Profile editing feature is not implemented yet.');
+    Alert.alert('Edit Profile', 'you are about to edit your profile');
   };
 
   const handleLogout = () => {
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     marginLeft: 2
   },
   editButton: {
-    backgroundColor: '#007BFF',
+    backgroundColor: '#333',
     padding: 15,
     borderRadius: 5,
     alignItems: 'center',
