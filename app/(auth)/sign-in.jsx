@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
         color: '#007BFF',
       },
       imageStyle : {
-        height : 9,
+        height : 90,
         width : 100,
         alignItems : 'center'
       }
