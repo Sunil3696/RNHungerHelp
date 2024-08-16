@@ -4,6 +4,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import profile from "./profile"; 
 import HomeStack from "./HomeStack";
+import Donate from './Donate';
+
 const Tab = createBottomTabNavigator();
 
 const DashLayout = () => {
@@ -17,6 +19,8 @@ const DashLayout = () => {
                 iconName = focused ? "home" : "home-outline";
               } else if (route.name === "profile") {
                 iconName = focused ? "person" : "person-outline";
+              }  else if (route.name === "Donate") {
+                iconName = focused ? "heart" : "heart-outline";
               }
     
               return <Ionicons name={iconName} size={size} color={color} />;
@@ -26,8 +30,9 @@ const DashLayout = () => {
           })}
         >
           <Tab.Screen name="Home" component={HomeStack} options={{ headerShown: false }} />
+         
+          <Tab.Screen name="Donate" component={Donate} options={{ headerShown: false }} />
           <Tab.Screen name="profile" component={profile} options={{ headerShown: false }} />
-          
         </Tab.Navigator>
       );
     };
