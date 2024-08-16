@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Image, ScrollView, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
+// import { useRouter } from 'expo-router';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native'; // Use useNavigation
+
+const handleSigninClicked = () => {
+    router.push('/sign-in')
+}
 
 const UserProfile = () => {
+
+  const navigation = useNavigation(); // Use useNavigation hook
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.profileSection}>
-          <Image source={require('../../assets/simantprofile.jpg')} style={styles.profileImage} />
+          <Image source={require('../../assets/simantprofile.jpg')}
+          style={styles.profileImage} />
           <Text style={styles.name}>Simant Dhakal</Text>
           <Text style={styles.address}>162 Wellington Street East, Barrie</Text>
 
-          <TouchableOpacity style={styles.editButton} onPress={() => alert('Edit Profile')}>
+          <TouchableOpacity style={styles.editButton} onPress={() => navigation.navigate('UpdateProfile')}>
             <Image source={require('../../assets/editing.png')} style={styles.editIcon} />
             <Text style={styles.editText}>Edit Profile</Text>
           </TouchableOpacity>
