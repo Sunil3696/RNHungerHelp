@@ -119,16 +119,16 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: 'bold',
     marginVertical: 10,
-    
+
   },
   categoryList: {
     marginBottom: 20,
      alignSelf: 'center',
-    
+
   },
   categoryListContainer: {
     paddingHorizontal: 10,
-    
+
   },
   categoryItem: {
     alignItems: 'center',

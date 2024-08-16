@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { Image } from 'react-native';
 import { useRouter } from 'expo-router';
+// static user credentials is set here
 const Signin = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const defaultEmail = "admin@gmail.com";
