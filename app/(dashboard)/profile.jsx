@@ -5,10 +5,10 @@ import { useRouter } from 'expo-router';
 const Profile = () => {
     const router = useRouter();
   const profileImage = require('../../assets/me.png');
-  const name = 'John Doe';
-  const email = 'johndoe@example.com';
-  const phoneNumber = '123-456-7890';
-  const address = '123 Main St, City, Country';
+  const name = 'Sunil Balami';
+  const email = 'sunilstark3696@gmail.com';
+  const phoneNumber = '647-273-3523';
+  const address = '73 Tunbridge Road, Barrie, Canada';
 
   const handleEditProfile = () => {
     Alert.alert('Edit Profile', 'you are about to edit your profile');
