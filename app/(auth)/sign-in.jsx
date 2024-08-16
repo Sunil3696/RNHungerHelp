@@ -27,28 +27,28 @@ const handlePasswordChange = (value) => {
 
 
 const handleSignin =  () => {
-    router.push('home')
-    // if(!email || !password ){
-    //     alert("All fields are required")
-    //     return;
-    // } 
 
-    // if (!emailRegex.test(email)) {
-    //     alert("Please enter a valid email address");
-    //     return;
-    // }
+    if(!email || !password ){
+        alert("All fields are required")
+        return;
+    } 
 
-    // if(password.length <6 ){
-    //     alert("Password must be atleast 6 char long")
-    //     return ;
-    // }
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address");
+        return;
+    }
 
-    // if (email == defaultEmail && password == defaultPassword) {
-    //     // alert("success")
-    //     router.push('home')
-    // } else {
-    //     alert("Invalid credentials, Email or password incorrect")
-    // }
+    if(password.length <6 ){
+        alert("Password must be atleast 6 char long")
+        return ;
+    }
+
+    if (email == defaultEmail && password == defaultPassword) {
+        // alert("success")
+        router.push('home')
+    } else {
+        alert("Invalid credentials, Email or password incorrect")
+    }
 
 }
 
