@@ -47,7 +47,7 @@ const Dashboard = () => {
 
   const renderCategory = ({ item }) => (
     <TouchableOpacity style={styles.categoryItem} onPress={() => navigation.navigate('AllFood')}>
-      <Ionicons name={item.icon} size={40} color="red" />
+      <Ionicons name={item.icon} size={40} color="#333" />
       <Text style={styles.categoryText}>{item.name}</Text>
     </TouchableOpacity>
   );
@@ -143,6 +143,7 @@ const styles = StyleSheet.create({
   categoryText: {
     fontSize: 14,
     color: '#666',
+    fontWeight : 'bold'
   },
   itemsList: {
     marginBottom: 20,
