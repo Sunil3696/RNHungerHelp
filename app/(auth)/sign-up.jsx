@@ -9,6 +9,7 @@ const Signup = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
  const [email, setEmail] = useState("");
  const [password, setPassword] = useState("");
+ const [cpassword, setCPassword] = useState("");
  const router = useRouter();
 
 
@@ -21,6 +22,10 @@ setEmail(value)
 const handlePasswordChange = (value) => {
     console.log("pass",value)
     setPassword(value)
+}
+
+const handleconfirmPassword = (value) => {
+setCPassword(value)
 }
 
 const handleSigninClicked = () => {
@@ -40,6 +45,11 @@ const handleSignUp = () => {
         if(password.length <6 ){
             alert("Password must be atleast 6 char long")
             return ;
+        }
+
+        if(password !== cpassword){
+            alert("Password and confirm password must be same");
+            return;
         }
 
     Alert.alert("Signup Successfull", 
@@ -78,6 +88,14 @@ const handleSignUp = () => {
           placeholder="Enter your password"
           secureTextEntry
         />
+        <Text style={styles.label}>Confirm password</Text>
+        <TextInput
+          style={styles.input}
+          onChangeText={ handleconfirmPassword}
+          placeholder="Confirm password"
+          secureTextEntry
+        />
+        
   
       </View>
 

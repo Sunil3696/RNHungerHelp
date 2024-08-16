@@ -3,7 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-nativ
 import Icon from 'react-native-vector-icons/Ionicons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-
+import { Image } from 'react-native';
 import { useRouter } from 'expo-router';
 const Signin = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -61,6 +61,9 @@ const handleSignupClicked = () => {
      <View style={styles.headerContainer}>
         <Text style={styles.title}>Welcome Back</Text>
         <Text style={styles.subtitle}>Sign in to proceed</Text>
+        <View style={styles.imageStyle}>
+        <Image source={require('../../assets/logos.png')} style={styles.image} />
+      </View>
       </View>
 
 
@@ -164,6 +167,11 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: '#007BFF',
       },
+      imageStyle : {
+        height : 9,
+        width : 100,
+        alignItems : 'center'
+      }
 });
 
 export default Signin;
