@@ -27,10 +27,10 @@ const UserProfile = () => {
                   <Image source={require('../../assets/editing.png')} style={styles.editIcon} />
                   <Text style={styles.editText}>Edit Profile</Text>
                 </TouchableOpacity>
-
+                <View style={styles.spacer}></View>
                 <TouchableOpacity style={styles.changePasswordButton} onPress={() => navigation.navigate('UpdatePassword')}>
                   <Image source={require('../../assets/editing.png')} style={styles.passwordIcon} />
-                  <Text style={styles.changePasswordText}>Change Password</Text>
+                  <Text style={styles.changePasswordText}>Password</Text>
                 </TouchableOpacity>
               </View>
         </View>
@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   profileSection: {
+    marginTop: 20,
     alignItems: 'center',
     marginBottom: 24,
   },
@@ -133,6 +134,17 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     backgroundColor: '#f5f5f5',
   },
+  changePasswordButton: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginTop: 16,
+      paddingVertical: 8,
+      paddingHorizontal: 16,
+      borderWidth: 1,
+      borderColor: '#D9D9D9',
+      borderRadius: 20,
+      backgroundColor: '#f5f5f5',
+    },
   editIcon: {
     width: 20,
     height: 20,
@@ -197,34 +209,8 @@ const styles = StyleSheet.create({
   buttonRow: {
       flexDirection: 'row',
       justifyContent: 'space-between', // Adjust spacing between buttons
-      marginVertical: 20,
+      marginVertical: 10,
       paddingHorizontal: 10,
-    },
-    editButton: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      padding: 10,
-      backgroundColor: '#4CAF50', // Green background
-      borderRadius: 5,
-      flex: 1, // Ensures both buttons take equal space
-      marginRight: 10, // Adds space between buttons
-    },
-    changePasswordButton: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      padding: 10,
-      backgroundColor: '#f44336', // Red background
-      borderRadius: 5,
-      flex: 1, // Ensures both buttons take equal space
-    },
-    editIcon: {
-      width: 20,
-      height: 20,
-      marginRight: 8,
-    },
-    editText: {
-      color: '#fff',
-      fontSize: 16,
     },
     passwordIcon: {
       width: 20,
@@ -232,9 +218,13 @@ const styles = StyleSheet.create({
       marginRight: 8,
     },
     changePasswordText: {
-      color: '#fff',
       fontSize: 16,
+      fontWeight: 'bold',
+      color: '#333',
     },
+    spacer: {
+        width: 20,
+    }
 });
 
 export default UserProfile;
