@@ -3,6 +3,8 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 const categories = [
     { id: '1', name: 'Beverage', icon: 'beer-outline' },
     { id: '2', name: 'Fast Food', icon: 'fast-food-outline' },
@@ -79,7 +81,12 @@ const Dashboard = () => {
           style={styles.categoryList}
           contentContainerStyle={styles.categoryListContainer}
         />
-        <Text style={styles.sectionTitle}>Recently Added Items</Text>
+        <View style={styles.sectionHeader}>
+              <Text style={styles.sectionTitle}>Recently Added Items</Text>
+              <TouchableOpacity onPress={() => navigation.navigate('AllFood')}>
+                <Text style={styles.viewAllText}>View All</Text>
+              </TouchableOpacity>
+            </View>
         <FlatList
           data={items}
           renderItem={renderItem}
@@ -186,4 +193,19 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#666',
   },
+  sectionHeader: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      paddingHorizontal: 20,
+      paddingVertical: 10,
+    },
+    sectionTitle: {
+      fontSize: 20,
+      fontWeight: 'bold',
+    },
+    viewAllText: {
+      fontSize: 14,
+      color: '#888', // Grey color
+    },
 });
