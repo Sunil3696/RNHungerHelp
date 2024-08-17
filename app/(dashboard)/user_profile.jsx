@@ -22,10 +22,17 @@ const UserProfile = () => {
           <Text style={styles.name}>Simant Dhakal</Text>
           <Text style={styles.address}>162 Wellington Street East, Barrie</Text>
 
-          <TouchableOpacity style={styles.editButton} onPress={() => navigation.navigate('UpdateProfile')}>
-            <Image source={require('../../assets/editing.png')} style={styles.editIcon} />
-            <Text style={styles.editText}>Edit Profile</Text>
-          </TouchableOpacity>
+          <View style={styles.buttonRow}>
+                <TouchableOpacity style={styles.editButton} onPress={() => navigation.navigate('UpdateProfile')}>
+                  <Image source={require('../../assets/editing.png')} style={styles.editIcon} />
+                  <Text style={styles.editText}>Edit Profile</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.changePasswordButton} onPress={() => navigation.navigate('UpdatePassword')}>
+                  <Image source={require('../../assets/editing.png')} style={styles.passwordIcon} />
+                  <Text style={styles.changePasswordText}>Change Password</Text>
+                </TouchableOpacity>
+              </View>
         </View>
 
         <View style={styles.statsSection}>
@@ -187,6 +194,47 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: '#666',
   },
+  buttonRow: {
+      flexDirection: 'row',
+      justifyContent: 'space-between', // Adjust spacing between buttons
+      marginVertical: 20,
+      paddingHorizontal: 10,
+    },
+    editButton: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      padding: 10,
+      backgroundColor: '#4CAF50', // Green background
+      borderRadius: 5,
+      flex: 1, // Ensures both buttons take equal space
+      marginRight: 10, // Adds space between buttons
+    },
+    changePasswordButton: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      padding: 10,
+      backgroundColor: '#f44336', // Red background
+      borderRadius: 5,
+      flex: 1, // Ensures both buttons take equal space
+    },
+    editIcon: {
+      width: 20,
+      height: 20,
+      marginRight: 8,
+    },
+    editText: {
+      color: '#fff',
+      fontSize: 16,
+    },
+    passwordIcon: {
+      width: 20,
+      height: 20,
+      marginRight: 8,
+    },
+    changePasswordText: {
+      color: '#fff',
+      fontSize: 16,
+    },
 });
 
 export default UserProfile;
